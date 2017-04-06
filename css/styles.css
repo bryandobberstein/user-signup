@@ -1,3 +1,22 @@
 body{
-    background: #FFEFD5;
+    background-color: #586A6A;
+}
+
+.focus{
+    float: left;
+    background-color: #818D92;
+    color: #253237;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 20px;
+    text-align: right;
+    padding: 5px 10px 20px 20px;
+    margin-right: auto;
+}
+
+h1{
+    font-weight: 900;
+}
+
+input:focus{
+    outline: 1px solid black;
 }

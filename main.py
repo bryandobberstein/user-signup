@@ -7,13 +7,15 @@ pageHTML = '''
         <head>
             <title>User Signup</title>
             <link rel = "stylesheet" href = "/css/styles.css">
+            <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
         </head>
         <body>
-            <form method = "post">
-                <label>Username <input type = "text" name = "uname" value = {}></label>{}</br>
-                <label>Password <input type = "password" name = "pword"></label>{}<br>
-                <label>Confirm  <input type = "password" name = "cfirm"></label>{}<br>
-                <label>Email    <input type = "email" name = "email" value = {}></label>{}<br>
+            <form method = "post" class = "focus">
+                <h1>Account Signup</h1>
+                <label>Username<input type = "text" name = "uname" value = {}></label>{}</br>
+                <label>Password<input type = "password" name = "pword"></label>{}<br>
+                <label>Confirm<input type = "password" name = "cfirm"></label>{}<br>
+                <label>Email<input type = "email" name = "email" value = {}></label>{}<br>
                 <input type = "submit">
             </form>
         </body>
@@ -27,7 +29,7 @@ success = """
             <link rel = "stylesheet" href = "/css/styles.css">
         </head>
         <body>
-            <h1>Welcome, {}!</h1>
+            <h1 class = "focus">Welcome, {}!</h1>
         </body>
     </html>
 """
