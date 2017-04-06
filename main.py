@@ -12,10 +12,14 @@ pageHTML = '''
         <body>
             <form method = "post" class = "focus">
                 <h1>Account Signup</h1>
-                <label>Username<input type = "text" name = "uname" value = {}></label>{}</br>
-                <label>Password<input type = "password" name = "pword"></label>{}<br>
-                <label>Confirm<input type = "password" name = "cfirm"></label>{}<br>
-                <label>Email<input type = "email" name = "email" value = {}></label>{}<br>
+                <label>Username<input type = "text" name = "uname" value = {}></label></br>
+                <span class = "error">{}</span><br>
+                <label>Password<input type = "password" name = "pword"></label><br>
+                <span class = "error">{}</span><br>
+                <label>Confirm<input type = "password" name = "cfirm"></label><br>
+                <span class = "error">{}</span><br>
+                <label>Email<input type = "email" name = "email" value = {}></label><br>
+                <span class = "error">{}</span><br>
                 <input type = "submit">
             </form>
         </body>
@@ -81,7 +85,7 @@ class MainHandler(webapp2.RequestHandler):
             validinput = False
 
         if not validpass(pword):
-            pworderr = "Invalid password: Must be between 8 and 20 characters"
+            pworderr = "Invalid password: Must contain 8-20 characters"
             validinput = False
 
         if not validcfirm(cfirm, pword):
