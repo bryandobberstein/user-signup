@@ -6,6 +6,7 @@ pageHTML = '''
     <html>
         <head>
             <title>User Signup</title>
+            <link rel = "stylesheet" href = "/css/styles.css">
         </head>
         <body>
             <form method = "post">
@@ -23,6 +24,7 @@ success = """
     <html>
         <head>
             <title>Welcome</title>
+            <link rel = "stylesheet" href = "/css/styles.css">
         </head>
         <body>
             <h1>Welcome, {}!</h1>
@@ -52,13 +54,13 @@ def validemail(email):
     return remail.match(email)
 
 class MainHandler(webapp2.RequestHandler):
-    def write_form(self, usrnm = "", eml = "", usrnmerr = "", pwrderr = "", cfrmerr  = "", emerr = ""):
+    def write_form(self, doc, usrnm = "", eml = "", usrnmerr = "", pwrderr = "", cfrmerr  = "", emerr = ""):
         usrnm = escape(usrnm, quote = True)
         eml = escape(eml, quote = True)
-        self.response.write(pageHTML.format(usrnm, usrnmerr, pwrderr, cfrmerr, eml, emerr))
+        self.response.write(doc.format(usrnm, usrnmerr, pwrderr, cfrmerr, eml, emerr))
 
     def get(self):
-        self.write_form()
+        self.write_form(pageHTML)
 
     def post(self):
         uname = self.request.get("uname")
@@ -88,8 +90,8 @@ class MainHandler(webapp2.RequestHandler):
             emailerr = "Please enter a valid email address"
 
         if validinput == False:
-            self.write_form(uname, email, unameerr, pworderr, cfirmerr, emailerr)
+            self.write_form(pageHTML, uname, email, unameerr, pworderr, cfirmerr, emailerr)
 
         else:
-            self.response.write(success.format(uname))
+            self.write_form(success, uname)
 app = webapp2.WSGIApplication([('/', MainHandler)], debug = True)
