@@ -48,14 +48,6 @@ def validuser(uname):
 def validpass(pword):
     return repass.match(pword)
 
-def validcfirm(cfirm, pword):
-    if len(cfirm) != len(pword):
-        return False
-    for i in range(len(cfirm)):
-        if cfirm[i] != pword[i]:
-            return False
-    return True
-
 def validemail(email):
     return remail.match(email)
 
@@ -88,7 +80,7 @@ class MainHandler(webapp2.RequestHandler):
             pworderr = "Invalid password: Must contain 8-20 characters"
             validinput = False
 
-        if not validcfirm(cfirm, pword):
+        if pword != cfirm:
             cfirmerr = "Passwords do not match"
             validinput = False
         
