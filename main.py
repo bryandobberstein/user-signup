@@ -12,6 +12,7 @@ pageHTML = '''
         <body>
             <form method = "post" class = "focus">
                 <h1>Account Signup</h1>
+<<<<<<< HEAD
                 <label>Username<input type = "text" name = "uname" value = {}></label></br>
                 <span class = "error">{}</span><br>
                 <label>Password<input type = "password" name = "pword"></label><br>
@@ -20,6 +21,12 @@ pageHTML = '''
                 <span class = "error">{}</span><br>
                 <label>Email<input type = "email" name = "email" value = {}></label><br>
                 <span class = "error">{}</span><br>
+=======
+                <label>Username <input type = "text" name = "uname" value = {}></label>{}</br>
+                <label>Password <input type = "password" name = "pword"></label>{}<br>
+                <label>Confirm <input type = "password" name = "cfirm"></label>{}<br>
+                <label>Email <input type = "email" name = "email" value = {}></label>{}<br>
+>>>>>>> working
                 <input type = "submit">
             </form>
         </body>
